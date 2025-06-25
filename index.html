@@ -1,40 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine - Xin lỗi cậu</title>
+
+    <!-- Google Font dễ thương -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
     <style>
+      body {
+        font-family: "Protest Riot", sans-serif;
+        background-color: #ffe6f0;
+        text-align: center;
+        padding: 30px;
+      }
+
+      .cat-img {
+        max-width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .title {
+        font-size: 1.8em;
+        color: #e91e63;
+        margin-top: 20px;
+      }
+
       .title span {
-        font-size: 1.5em; /* Kích thước chữ 1.5em */
+        display: block;
+        font-size: 1.2em;
+        margin-top: 10px;
+      }
+
+      .buttons {
+        margin-top: 40px;
+      }
+
+      .btn {
+        font-size: 1.2em;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .btn--yes {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .btn--yes:hover {
+        background-color: #45a049;
+      }
+
+      .btn--no {
+        background-color: #f44336;
+        color: white;
+        position: relative;
+      }
+
+      .btn--no:hover {
+        transform: translateX(100px);
       }
     </style>
-    <title>Valentine</title>
   </head>
+
   <body>
-    <main class="container">
+    <main>
       <img
         class="cat-img"
-        src="https://media.giphy.com/media/SVkhYVCi8fKPKvypi6/giphy.gif"
-        alt="Picture of a cat"
+        src="cat-0.jpg"
+        alt="Mèo buồn"
       />
+
       <p class="title">
-        Cậu ơi tha lỗi cho tớ nhó😭<br /><span
-          >Cậu khong chọn hoặc thoát là tha lỗi cho tớ đó</span
-        >
+        Cậu ơi tha lỗi cho tớ nhó 😭
+        <span>Nếu cậu thoát hoặc không chọn gì là tớ hiểu rồi 😢</span>
       </p>
+
       <div class="buttons">
         <button type="button" class="btn btn--yes">Tớ chấp nhận</button>
         <button type="button" class="btn btn--no">Không bao giờ</button>
       </div>
     </main>
 
-    <script type="module" src="script.js"></script>
+    <!-- JS -->
+    <script>
+      const btnYes = document.querySelector(".btn--yes");
+      const btnNo = document.querySelector(".btn--no");
+      const img = document.querySelector(".cat-img");
+
+      btnYes.addEventListener("click", () => {
+        img.src = "cat-yes.jpg";
+        alert("Cảm ơn cậu nhiều lắm 😭 Tớ thật sự biết lỗi rồi ❤️");
+      });
+
+      // Làm nút No chạy trốn
+      btnNo.addEventListener("mouseover", () => {
+        const randomX = Math.floor(Math.random() * 200 - 100);
+        const randomY = Math.floor(Math.random() * 100 - 50);
+        btnNo.style.transform = `translate(${randomX}px, ${randomY}px)`;
+      });
+    </script>
   </body>
 </html>
