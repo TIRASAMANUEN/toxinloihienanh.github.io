@@ -27,7 +27,7 @@ noButton.addEventListener("click", function () {
 });
 
 function handleYesClick() {
-  titleElement.innerHTML = "Tớ xin lỗi câu, tớ hứa ko làm cậu buồn nữa đâu :3";
+  titleElement.innerHTML = "Tớ xin lỗi Hiền Anh, tớ hứa ko làm cậu buồn nữa đâu :3";
   buttonsContainer.classList.add("hidden");
   changeImage("yes");
 }
