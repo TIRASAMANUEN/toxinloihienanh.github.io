@@ -4,31 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Valentine</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Protest Riot", cursive;
         background-color: #ffe6f0;
         text-align: center;
         padding: 30px;
+        margin: 0;
       }
 
       .cat-img {
-        max-width: 250px;
-        margin-top: 20px;
+        width: 260px;
+        max-width: 90%;
         border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
 
       .title {
         font-size: 1.8rem;
         color: #e91e63;
-        margin: 20px 0;
+        margin-top: 20px;
       }
 
       .title span {
         font-size: 1rem;
         display: block;
-        margin-top: 8px;
+        margin-top: 10px;
       }
 
       .buttons {
@@ -37,9 +46,9 @@
 
       .btn {
         font-size: 1.2rem;
-        padding: 12px 20px;
+        padding: 12px 24px;
         border: none;
-        border-radius: 6px;
+        border-radius: 8px;
         margin: 10px;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -53,20 +62,24 @@
       .btn--no {
         background-color: #f44336;
         color: white;
-        position: relative;
+      }
+
+      .hidden {
+        display: none;
       }
     </style>
   </head>
+
   <body>
     <main class="container">
       <img
         class="cat-img"
-        src="cat-0.jpg"
-        alt="Picture of a cat"
+        src="img/cat-0.jpg"
+        alt="Ảnh mèo buồn"
       />
       <p class="title">
-        Cậu ơi tha lỗi cho tớ nhó😭<br />
-        <span>Cậu không chọn hoặc thoát là tha lỗi cho tớ đó</span>
+        Cậu ơi tha lỗi cho tớ nhó 😭<br />
+        <span>Cậu không chọn hoặc thoát là tha lỗi cho tớ đó 🥺</span>
       </p>
       <div class="buttons">
         <button type="button" class="btn btn--yes">Tớ chấp nhận</button>
@@ -74,25 +87,6 @@
       </div>
     </main>
 
-    <script>
-      const btnNo = document.querySelector(".btn--no");
-      const btnYes = document.querySelector(".btn--yes");
-      const img = document.querySelector(".cat-img");
-
-      // Cho nút "Không bao giờ" co lại mỗi lần bấm
-      let scale = 1;
-      btnNo.addEventListener("click", () => {
-        scale *= 0.9;
-        btnNo.style.transform = `scale(${scale})`;
-        if (scale < 0.3) {
-          btnNo.innerText = "🥺";
-        }
-      });
-
-      btnYes.addEventListener("click", () => {
-        img.src = "cat-yes.jpg";
-        alert("Tớ cảm ơn cậu nhiều lắmmmm ❤️😭");
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
